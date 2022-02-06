@@ -10,7 +10,6 @@ router.get('/', (req, res) => {
   Tag.findAll({
     include: [Product]
   }).then(tags => {
-    console.log(tags)
     res.json(tags);
   })
 });
