@@ -1,3 +1,5 @@
+// Setup for tag table
+
 const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');

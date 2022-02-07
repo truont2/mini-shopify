@@ -1,12 +1,12 @@
+// file to modify tags data
+
+// imprt table data and express 
 const router = require('express').Router();
-const e = require('express');
+const express = require('express');
 const { Tag, Product, ProductTag } = require('../../models');
 
-// The `/api/tags` endpoint
-
+// route to get all tag data
 router.get('/', (req, res) => {
-  // find all tags
-  // be sure to include its associated Product data
   Tag.findAll({
     include: [Product]
   }).then(tags => {
@@ -14,9 +14,8 @@ router.get('/', (req, res) => {
   })
 });
 
+// route to grab a single tag
 router.get('/:id', async (req, res) => {
-  // find a single tag by its `id`
-  // be sure to include its associated Product data
   try {
     const getTag = await Tag.findByPk(req.params.id, {
       include: [Product],
@@ -31,9 +30,8 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+// route to create a new product
 router.post('/', async (req, res) => {
-  // create a new tag
-  // if the tag created were connected to a product then we need to update the product to unlude this tags id
   try {
     const newTag = await Tag.create(req.body);
     res.status(200).json(newTag);
@@ -42,6 +40,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+// route to update a specific tag
 router.put('/:id', async(req, res) => {
   // update a tag's name by its `id` value
   try{
@@ -60,6 +59,7 @@ router.put('/:id', async(req, res) => {
   }
 });
 
+// route to delete a specific tag
 router.delete('/:id', async (req, res) => {
   // delete on tag by its `id` value
   try {

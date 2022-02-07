@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Product, Category, Tag, ProductTag } = require('../../models');
 
+// route to grab all the categories
 router.get('/', (req, res) => {
   // find all tags
   // be sure to include its associated Product data
@@ -12,7 +13,7 @@ router.get('/', (req, res) => {
   })
 });
 
-
+// route to grab a specific category
 router.get('/:id', async(req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
@@ -30,8 +31,8 @@ router.get('/:id', async(req, res) => {
   }
 });
 
+// route to create a new category
 router.post('/', async (req, res) => {
-  // create a new category
   try {
     const newCat = await Category.create(req.body);
     res.status(200).json(newCat);
@@ -40,6 +41,7 @@ router.post('/', async (req, res) => {
   }
 });
 
+// route to update a category
 router.put('/:id', async (req, res) => {
   // update a category by its `id` value
   try{
@@ -59,6 +61,7 @@ router.put('/:id', async (req, res) => {
 
 });
 
+// router to delete a category
 router.delete('/:id', async(req, res) => {
   // delete a category by its `id` value
   try {
