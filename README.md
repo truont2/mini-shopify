@@ -56,26 +56,26 @@ This video shows the steps to install any packages and run the application after
 
 Set up Database
 
-![video walkthrough](./assets/setup.gif)
+![video walkthrough](./Assets/setup.gif)
 
 Use the application: 
 1. Request Data
 
-![video walkthrough](./assets/requestData.gif)
+![video walkthrough](./Assets/requestData.gif)
 
 2. Create and update data: 
 
-![video walkthrough](./assets/createUpdate.gif)
+![video walkthrough](./Assets/createUpdate.gif)
 
 3. Delete data
 
-![video walkthrough](./assets/delete.gif)
+![video walkthrough](./Assets/delete.gif)
 
 4. Update associations 
 
 When you create a new tag or category, there will be no products associated with this so you must update products to have that association.
 
-![video walkthrough](./assets/associations.gif)
+![video walkthrough](./Assets/associations.gif)
 
 ## Contribute
 
